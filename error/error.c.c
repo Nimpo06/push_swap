@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   error.c.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 15:10:32 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/17 15:33:40 by mayoub           ###   ########.fr       */
+/*   Created: 2022/05/17 15:26:28 by mayoub            #+#    #+#             */
+/*   Updated: 2022/05/17 15:30:53 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <errno.h>
-
-typedef struct s_lst
+void	its_under_the_sauce(void)
 {
-	int				nbr;
-	int				index;
-	struct s_lst	*next;
-}	t_lst;
-
-int		ft_atoi(const char *str);
-
-/*----------ERROR----------*/
-
-void	its_under_the_sauce(void);
-
-#endif
+	printf("too few argument");
+	exit(0);
+}

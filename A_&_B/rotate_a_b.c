@@ -6,9 +6,13 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:18:31 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/04 16:18:37 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/17 16:50:42 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	rr(t_lst **start_a, t_lst **start_b)
+{
+	
+}

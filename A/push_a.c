@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:13:10 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/18 18:53:22 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/18 18:54:24 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	pa(t_lst **start_a, t_lst **start_b)
 	// new_lst->next = *start_a
 	// *start_a = new_lst;
 	// del la premiere list de A
+	// faire point vers le second, AKA celui que tu viens de push
 
 
 

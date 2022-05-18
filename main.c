@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:14:44 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/17 15:38:34 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/18 18:18:42 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 		its_under_the_sauce();
 	count = argc - 1;
 	start_a = malloc(sizeof(t_lst **));
+	start_b = malloc(sizeof(t_lst **));
 	lst = *start_a;
 	if (!lst)
 		return (NULL);

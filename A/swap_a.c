@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:12:42 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/18 18:00:37 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/19 17:59:11 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 void	sa(t_lst **start_a)
 {
-	
+	t_lst	*temp;
+
+	temp = (*start_a);
+	*start_a = (*start_a)->next;
+	(*start_a)->next = temp;
+	temp->next = (*start_a)->next->next;
 }

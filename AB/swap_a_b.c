@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   swap_a_b.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 14:30:17 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/20 16:48:13 by mayoub           ###   ########.fr       */
+/*   Created: 2022/05/04 16:17:19 by mayoub            #+#    #+#             */
+/*   Updated: 2022/05/20 17:16:33 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_lstclear(t_lst **lst, void (*del)(void *))
+void	ss(t_lst **start_a, t_lst **start_b)
 {
-	t_lst	*tmp;
-
-	while (lst && *lst)
-	{
-		tmp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = tmp;
-	}
+	sa(start_a);
+	sb(start_b);
 }

@@ -6,13 +6,13 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 13:26:19 by mayoub            #+#    #+#             */
-/*   Updated: 2021/11/05 14:33:15 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/20 16:49:47 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_lst *lst, void (*del)(void *))
 {
 	if (lst)
 	{

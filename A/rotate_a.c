@@ -6,11 +6,11 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:13:39 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/17 16:27:44 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/20 13:00:32 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ra(t_lst **start_a)
 {

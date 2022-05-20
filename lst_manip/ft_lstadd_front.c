@@ -6,13 +6,13 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:10:29 by mayoub            #+#    #+#             */
-/*   Updated: 2021/11/05 12:38:16 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/20 16:48:22 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	ft_lstadd_front(t_list **alst, t_list *new)
+void	ft_lstadd_front(t_lst **alst, t_lst *new)
 {
 	if (alst)
 	{

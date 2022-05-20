@@ -6,7 +6,7 @@
 #    By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/23 15:10:20 by mayoub            #+#    #+#              #
-#    Updated: 2022/05/11 15:17:37 by mayoub           ###   ########.fr        #
+#    Updated: 2022/05/20 17:31:20 by mayoub           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ FILE	=	main.c 						\
 			B/reverse_rotate_b.c 		\
 			B/rotate_b.c 				\
 			B/swap_b.c 					\
-			A_&_B/reverse_rotate_a_b.c 	\
-			A_&_B/rotate_a_b.c 			\
-			A_&_B/swap_a_b.c 			\
+			AB/reverse_rotate_a_b.c 	\
+			AB/rotate_a_b.c 			\
+			AB/swap_a_b.c				\
 			lst_manip/ft_lstadd_back.c 	\
-			lst_manip/ft_lstadd_front 	\
+			lst_manip/ft_lstadd_front.c	\
 			lst_manip/ft_lstclear.c 	\
 			lst_manip/ft_lstdelone.c 	\
 			lst_manip/ft_lstiter.c 		\
@@ -31,6 +31,7 @@ FILE	=	main.c 						\
 			lst_manip/ft_lstmap.c 		\
 			lst_manip/ft_lstnew.c 		\
 			lst_manip/ft_lstsize.c 		\
+			error/error.c				\
 
 LIBFT	=	./libft/
 

@@ -6,13 +6,13 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:37:43 by mayoub            #+#    #+#             */
-/*   Updated: 2021/11/05 12:43:47 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/20 16:55:09 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_lst *lst)
 {
 	size_t	i;
 

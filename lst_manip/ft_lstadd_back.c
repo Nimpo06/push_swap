@@ -6,15 +6,15 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:22:16 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/11 15:21:27 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/20 16:46:01 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_lst **lst, t_lst *new)
 {
-	t_list	*last;
+	t_lst	*last;
 
 	if (lst)
 	{

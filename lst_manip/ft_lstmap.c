@@ -6,16 +6,16 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 14:50:50 by mayoub            #+#    #+#             */
-/*   Updated: 2021/11/05 15:29:08 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/20 16:54:09 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_lst	*ft_lstmap(t_lst *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*first;
-	t_list	*new;
+	t_lst	*first;
+	t_lst	*new;
 
 	if (!f || !del)
 		return (NULL);

@@ -6,13 +6,13 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 14:42:21 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/11 15:07:40 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/20 16:53:11 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_lst *lst, void (*f)(void *))
 {
 	while (lst)
 	{

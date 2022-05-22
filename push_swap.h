@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:10:32 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/20 17:32:01 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/21 15:58:41 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ void	ss(t_lst **start_a, t_lst **start_b);
 
 void	ft_lstadd_back(t_lst **lst, t_lst *new);
 void	ft_lstadd_front(t_lst **alst, t_lst *new);
-void	ft_lstclear(t_lst **lst, void (*del)(void *));
-void	ft_lstdelone(t_lst *lst, void (*del)(void *));
-void	ft_lstiter(t_lst *lst, void (*f)(void *));
+void	ft_lstclear(t_lst **lst, int del(int));
+void	ft_lstdelone(t_lst *lst, int del(int));
+void	ft_lstiter(t_lst *lst, void (*f)(t_lst *content));
 t_lst	*ft_lstlast(t_lst *lst);
-t_lst	*ft_lstmap(t_lst *lst, void *(*f)(void *), void (*del)(void *));
-t_lst	*ft_lstnew(void *content);
+t_lst	*ft_lstmap(t_lst *lst, void *(*f)(void *), int del(int));
+t_lst	*ft_lstnew(int content);
 int		ft_lstsize(t_lst *lst);
 
 /*----------ERROR----------*/

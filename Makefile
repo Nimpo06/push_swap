@@ -6,63 +6,131 @@
 #    By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/23 15:10:20 by mayoub            #+#    #+#              #
-#    Updated: 2022/05/20 17:31:20 by mayoub           ###   ########.fr        #
+#    Updated: 2022/05/22 18:39:30 by mayoub           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILE	=	main.c 						\
-			A/push_a.c 					\
-			A/reverse_rotate_a.c 		\
-			A/rotate_a.c 				\
-			A/swap_a.c 					\
-			B/push_b.c 					\
-			B/reverse_rotate_b.c 		\
-			B/rotate_b.c 				\
-			B/swap_b.c 					\
-			AB/reverse_rotate_a_b.c 	\
-			AB/rotate_a_b.c 			\
-			AB/swap_a_b.c				\
-			lst_manip/ft_lstadd_back.c 	\
-			lst_manip/ft_lstadd_front.c	\
-			lst_manip/ft_lstclear.c 	\
-			lst_manip/ft_lstdelone.c 	\
-			lst_manip/ft_lstiter.c 		\
-			lst_manip/ft_lstlast.c 		\
-			lst_manip/ft_lstmap.c 		\
-			lst_manip/ft_lstnew.c 		\
-			lst_manip/ft_lstsize.c 		\
-			error/error.c				\
+NAME		=	push_swap
 
-LIBFT	=	./libft/
+FILE		=	main						\
+				A/push_a					\
+				A/reverse_rotate_a			\
+				A/rotate_a					\
+				A/swap_a					\
+				B/push_b					\
+				B/reverse_rotate_b			\
+				B/rotate_b					\
+				B/swap_b					\
+				AB/reverse_rotate_a_b		\
+				AB/rotate_a_b				\
+				AB/swap_a_b					\
+				lst_manip/ft_lstadd_back	\
+				lst_manip/ft_lstadd_front	\
+				lst_manip/ft_lstclear		\
+				lst_manip/ft_lstdelone		\
+				lst_manip/ft_lstiter		\
+				lst_manip/ft_lstlast		\
+				lst_manip/ft_lstmap			\
+				lst_manip/ft_lstnew			\
+				lst_manip/ft_lstsize		\
+				error/error					\
 
-OBJ		=	${FILE:.c=.o}
+SRC_DIR		=	./
 
-NAME	=	push_swap
+SRC			=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(FILE)))
 
-CC		=	gcc
+OBJ_DIR		=	./
 
-CFLAGS	=	-Werror -Wall -Wextra -g
+OBJ			=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(FILE)))
 
-LIB		=	-lft -L$(LIBFT)
+LIBFT_DIR	=	./libft/
 
-RM		=	rm -rf
+LIBFT		=	$(addprefix $(LIBFT_DIR), libft.a)
 
-%.o:	%.c
-			${CC} ${CFLAGS} -o $< ${<:.c=.o}
+CC			=	gcc
 
-$(NAME):
-		$(LIB)
-		$(CC) $(CFLAGS) $(FILE) -o $(NAME)
+CFLAGS		=	-Werror -Wall -Wextra -g
 
-$(LIB):	@$(MAKE) -C $(LIBFT)
+LIBRARIES	=	-lft -L$(LIBFT_DIR)
 
-all:	${NAME}
+HEADERS		=	-I$(LIBFT_DIR)
 
-clean:	${RM} ${OBJ}
+RM			=	rm -rf
 
-fclean:	clean
-		${RM} ${NAME}
+.c.o		:
+				${CC} ${CFLAGS} ${HEADERS} -c $< -o ${<:.c=.o}
 
-re:		fclean all
+${NAME}		:	$(LIBFT) ${OBJ}
+				@${CC} ${CFLAGS} ${LIBRARIES} ${OBJ} -o $@
+				@echo "\033[0;37m\n##############################################\n"
+				@echo "\033[1;32m 🥗 The push_swap files are ready 🥙 !!!\n\033[0;37m\n##############################################"
+				@echo "\033[1;31m\nDONE !!! \033[1;32mHere your order 🍔 🍟 🍺 , Bon Appetit !!!\n"
 
-.PHONY:	all clean fclean re
+$(LIBFT)	:
+				@echo "\033[1;34m\n 😋 OKAY ! Let's do some good cook for dinner !!! 😋\n \033[0;37m\n##############################################\n\n\033[1;33m🥚 Let's fry the Libft 🥚 . . .\n"
+				@$(MAKE) -C $(LIBFT_DIR)
+				@echo "\033[1;32m \n🍳 Libft is cooked 🍳 !!!\n \033[0;37m\n##############################################\n"
+				@echo "\033[1;35m🥕 Let's cook the push_swap files 🥬 . . .\n"
+
+all			:	${NAME}
+
+clean		:
+				@echo "\033[1;37m\n 😳 IT'S GROSS ??? 😳\n"
+				${RM} ${OBJ}
+				@$(MAKE) clean -C $(LIBFT_DIR)
+				@echo "\n 🗑  Your dish has been cleaned 🗑\n"
+
+fclean		:	clean
+				${RM} ${NAME}
+				@$(MAKE) fclean -C $(LIBFT_DIR)
+				@echo "\n 🗑 💩 ALL our dish has been cleaned 💩 🗑\n"
+
+re			:	fclean all
+				@echo "\033[1;36m\n 👨‍🍳 Are you still hungry ? NO PROBLEMO ! 👩‍🍳\n"
+
+sus			:
+				@for (( i=1; i<=10000; i++ )) \
+				do \
+				echo "\033[1;37m                                                        &&&&&###&&&&&&&&&"; \
+				echo "                                                  &&##BBBBBBBBBBBBBBBBBBBBB###&&"; \
+				echo "                                  &&&&###&    &&#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB#&&"; \
+				echo "                     &###&   &&##BBBBB#&  &&#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB##&"; \
+				echo "                &&##BB#&  &#BBBBBBB#&   &#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB#&"; \
+				echo "             &#BBBBB#&  &#B###BBB#   &#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB#&"; \
+				echo "          &#BBBBBBBB&  BBBB#&&&&  &#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB#&"; \
+				echo "        &BBBBBBBBBBB#&  &##BB#& &#BBBBBBBBBBBBBBBBBBBBBBBBBBBBB################BBBBBBBBBBBBBBB#"; \
+				echo "      &BBBBBBBBBBBBBBBB#&&  & &#BBBBBBBBBBBBBBBBBBBBBBB#################################BBBBBBB#&"; \
+				echo "     #BBBBBBBBBBBBBBBBBBBB####BBBBBBBBBBBBBBBBBBBB###########################################BBBB&"; \
+				echo "    &BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB##################################################BB&"; \
+				echo "    &BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB########################################################&"; \
+				echo "     #BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB###########################################################"; \
+				echo "      &&&&&&#BBBBBBBBBBBBBBBBBBBBBBBBBB#############################################################"; \
+				echo "  &#BP55PG#  BBBBBBBBBBBBBBBBBBBBBBB################################################################"; \
+				echo "B5YY55PGB#  #BBBBBB##BBBBBBBBBBBBB##################################################################"; \
+				echo "BBB##&&  &#BBB########BBBBBBBBBB####################################################################"; \
+				echo "         &###############BBBBB######################################################################"; \
+				echo "          &#########################################################################################"; \
+				echo "            &#######################################################################################"; \
+				echo "             &######################################################################################"; \
+				echo "               &###################################################################################&"; \
+				echo "                 &################################################################################& "; \
+				echo "                   &#############################################################################&  "; \
+				echo "                     ###########################################################################&   "; \
+				echo "                      &########################################################################&    "; \
+				echo "                        ######################################################################&     "; \
+				echo "                         &###################################################################       "; \
+				echo "                          &###################################################&&&&#########&        "; \
+				echo "                           &############################################&&&@@@@&#########&          "; \
+				echo "                            &####################################&&&@@@@@@&&&##########&            "; \
+				echo "                             &#############################&&&           &##########&               "; \
+				echo "                              #####################&&&&                  &#######&                  "; \
+				echo "                               #################&                        ###&&&                     "; \
+				echo "                               &###############&                                                    "; \
+				echo "                                &#############&                                                     "; \
+				echo "                                 ############&                                                      "; \
+				echo "                                 &#######&&&                                                        "; \
+				echo "                                  ##&&                                                              "; \
+				echo $$i 💀 SUSSY BAKA 💀\\n; \
+				done
+
+.PHONY		:	all clean fclean re

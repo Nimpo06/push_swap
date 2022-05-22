@@ -6,13 +6,13 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:16:50 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/20 16:54:42 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/21 14:44:07 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_lst	*ft_lstnew(void *content)
+t_lst	*ft_lstnew(int content)
 {
 	t_lst	*new;
 

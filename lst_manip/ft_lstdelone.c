@@ -6,17 +6,18 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 13:26:19 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/20 16:49:47 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/21 15:56:39 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_lstdelone(t_lst *lst, void (*del)(void *))
+void	ft_lstdelone(t_lst *lst, int del(int))
 {
 	if (lst)
 	{
-		(*del)(lst->content);
+		del(lst->content);
 		free(lst);
+		lst = NULL;
 	}	
 }

@@ -6,13 +6,13 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 14:50:50 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/20 16:54:09 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/21 15:54:35 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_lst	*ft_lstmap(t_lst *lst, void *(*f)(void *), void (*del)(void *))
+t_lst	*ft_lstmap(t_lst *lst, void *(*f)(void *), int del(int))
 {
 	t_lst	*first;
 	t_lst	*new;
@@ -22,13 +22,13 @@ t_lst	*ft_lstmap(t_lst *lst, void *(*f)(void *), void (*del)(void *))
 	first = NULL;
 	while (lst)
 	{	
-		new = ft_lstnew((*f)(lst->content));
+		new = ft_lstnew(lst->content);
 		if (!new)
 		{
 			while (first)
 			{
 				new = first->next;
-				(*del)(first->content);
+				del(first->content);
 				free(first);
 				first = new;
 			}

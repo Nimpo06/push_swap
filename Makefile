@@ -6,7 +6,7 @@
 #    By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/23 15:10:20 by mayoub            #+#    #+#              #
-#    Updated: 2022/05/22 18:39:30 by mayoub           ###   ########.fr        #
+#    Updated: 2022/05/23 18:56:13 by mayoub           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,12 +65,17 @@ ${NAME}		:	$(LIBFT) ${OBJ}
 				@echo "\033[0;37m\n##############################################\n"
 				@echo "\033[1;32m 🥗 The push_swap files are ready 🥙 !!!\n\033[0;37m\n##############################################"
 				@echo "\033[1;31m\nDONE !!! \033[1;32mHere your order 🍔 🍟 🍺 , Bon Appetit !!!\n"
+				@say --voice=Thomas Bon appetit
 
 $(LIBFT)	:
 				@echo "\033[1;34m\n 😋 OKAY ! Let's do some good cook for dinner !!! 😋\n \033[0;37m\n##############################################\n\n\033[1;33m🥚 Let's fry the Libft 🥚 . . .\n"
+				@say --voice=Thomas Tiens jai une petite faim !
+				@say --voice=Thomas Les oeufs vont aller faire trempête !
 				@$(MAKE) -C $(LIBFT_DIR)
 				@echo "\033[1;32m \n🍳 Libft is cooked 🍳 !!!\n \033[0;37m\n##############################################\n"
+				@say --voice=Thomas Les oeufs sont prêt !
 				@echo "\033[1;35m🥕 Let's cook the push_swap files 🥬 . . .\n"
+				@say --voice=Thomas On coupe coupe coupe les légume !
 
 all			:	${NAME}
 
@@ -79,6 +84,7 @@ clean		:
 				${RM} ${OBJ}
 				@$(MAKE) clean -C $(LIBFT_DIR)
 				@echo "\n 🗑  Your dish has been cleaned 🗑\n"
+				@say --voice=Thomas Hop ! À la poubelle !
 
 fclean		:	clean
 				${RM} ${NAME}
@@ -91,6 +97,7 @@ re			:	fclean all
 sus			:
 				@for (( i=1; i<=10000; i++ )) \
 				do \
+				clear \
 				echo "\033[1;37m                                                        &&&&&###&&&&&&&&&"; \
 				echo "                                                  &&##BBBBBBBBBBBBBBBBBBBBB###&&"; \
 				echo "                                  &&&&###&    &&#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB#&&"; \

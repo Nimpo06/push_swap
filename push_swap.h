@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:10:32 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/23 17:16:40 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/24 18:15:40 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	rrb(t_lst **start_b);
 void	rb(t_lst **start_b);
 void	sb(t_lst **start_b);
 
-/*-----------A&B-----------*/
+/*-----------A B-----------*/
 
 void	rrr(t_lst **start_a, t_lst **start_b);
 void	rr(t_lst **start_a, t_lst **start_b);

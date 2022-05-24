@@ -6,7 +6,7 @@
 #    By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/23 15:10:20 by mayoub            #+#    #+#              #
-#    Updated: 2022/05/23 18:56:13 by mayoub           ###   ########.fr        #
+#    Updated: 2022/05/24 10:38:43 by mayoub           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ ${NAME}		:	$(LIBFT) ${OBJ}
 				@${CC} ${CFLAGS} ${LIBRARIES} ${OBJ} -o $@
 				@echo "\033[0;37m\n##############################################\n"
 				@echo "\033[1;32m 🥗 The push_swap files are ready 🥙 !!!\n\033[0;37m\n##############################################"
-				@echo "\033[1;31m\nDONE !!! \033[1;32mHere your order 🍔 🍟 🍺 , Bon Appetit !!!\n"
+				@echo "\033[1;31m\nDONE !!! \033[1;32mHere your order 🍔 🍟 🍺 , Bon Appétit !!!\n"
 				@say --voice=Thomas Bon appetit
 
 $(LIBFT)	:
@@ -140,4 +140,4 @@ sus			:
 				echo $$i 💀 SUSSY BAKA 💀\\n; \
 				done
 
-.PHONY		:	all clean fclean re
+.PHONY		:	all clean fclean re sus

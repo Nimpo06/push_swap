@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:10:32 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/24 18:15:40 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/25 18:51:46 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 # include <unistd.h>
 # include <errno.h>
 
-typedef struct s_lst
-{
+typedef struct s_lst{
 	int				nbr;
 	int				index;
 	int				content;
@@ -27,6 +26,8 @@ typedef struct s_lst
 }	t_lst;
 
 int		ft_atoi(const char *str);
+void	start(t_lst *lst, int argc, char **argv);
+int		anti_occurrences(t_lst *lst);
 
 /*------------A------------*/
 
@@ -63,5 +64,6 @@ int		ft_lstsize(t_lst *lst);
 /*----------ERROR----------*/
 
 void	its_under_the_sauce(void);
+void	tacos_taille_XL_nuggets_tenders_merguez_sauce_biggy(void);
 
 #endif

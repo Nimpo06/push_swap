@@ -6,41 +6,48 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:14:44 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/24 18:29:58 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/25 19:06:51 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*int	main(int argc, char **argv)
+void	start(t_lst *lst, int argc, char **argv)
+{
+	int	count;
+
+	count = 1;
+	if (argc <= 2)
+		its_under_the_sauce();
+	while (count < argc)
+	{
+		lst = malloc(sizeof(t_lst));
+		lst->nbr = ft_atoi(argv[count]);
+		printf("%d\n", lst->nbr);
+		lst = lst->next;
+		count++;
+	}
+	lst = NULL;
+	if (anti_occurrences(lst) == 1)
+		tacos_taille_XL_nuggets_tenders_merguez_sauce_biggy();
+}
+
+int	main(int argc, char **argv)
 {
 	t_lst	**start_a;
 	t_lst	**start_b;
 	t_lst	*lst;
-	int		count;
 
-	if (argc < 2)
-		its_under_the_sauce();
-	count = argc - 1;
 	start_a = malloc(sizeof(t_lst **));
 	start_b = malloc(sizeof(t_lst **));
 	lst = *start_a;
 	if (!lst)
 		return (0);
-	printf("%s\n", argv[1]);
-	while (count)
-	{
-		lst = malloc(sizeof(t_lst));
-		lst->nbr = ft_atoi(argv[count]);
-		lst = lst->next;
-		printf("%d\n", count);
-		count--;
-	}
-	lst->next = NULL;
+	start(lst, argc, argv);
 	return (0);
-}*/
+}
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	t_lst	**start_a;
 	t_lst	**start_b;
@@ -64,4 +71,4 @@ int	main(int argc, char **argv)
 	}
 	lst->next = NULL;
 	return (0);
-}
+}*/

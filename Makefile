@@ -6,7 +6,7 @@
 #    By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/23 15:10:20 by mayoub            #+#    #+#              #
-#    Updated: 2022/05/24 10:38:43 by mayoub           ###   ########.fr        #
+#    Updated: 2022/05/25 18:43:22 by mayoub           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ FILE		=	main						\
 				lst_manip/ft_lstmap			\
 				lst_manip/ft_lstnew			\
 				lst_manip/ft_lstsize		\
+				parsing/anti_occurrences	\
 				error/error					\
 
 SRC_DIR		=	./

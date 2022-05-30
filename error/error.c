@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:26:28 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/25 18:50:20 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/30 16:13:42 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,18 @@ void	its_under_the_sauce(void)
 	exit(1);
 }
 
-void	tacos_taille_XL_nuggets_tenders_merguez_sauce_biggy(void)
+void	tacos_taille_xl_nuggets_tenders_merguez_sauce_biggy_gratine(void)
 {
-	printf("SAME NUMBER");
+	printf("\n\e[0;95m🤨 bruh wtf, several duplicate number 🤨\n");
+	printf("           \e[1;91m💀 DAMN BRO 💀\n\n");
+	system("say --voice=Thomas loser");
+	exit(1);
+}
+
+void	shrek_is_love_shrek_is_life(void)
+{
+	printf("\n\e[0;31mWTF 💀💀💀 ! 😐 \e[0;37mIt's already sorted ! 😐\n");
+	printf("     \e[1;36m🧠 Where is your brain ??? 🧠\n\n");
 	system("say --voice=Thomas loser");
 	exit(1);
 }

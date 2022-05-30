@@ -6,28 +6,49 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:50:25 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/25 18:38:35 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/28 18:58:37 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	anti_occurrences(t_lst *lst)
+int	anti_occurrences(char **argv)
 {
-	t_lst	*subject;
+	int	i;
+	int	j;
 
-	if (!lst)
-		return (1);
-	while (lst != NULL)
+	i = 0;
+	while (argv[i])
 	{
-		subject = lst->next;
-		while (subject != NULL)
+		j = i + 1;
+		while (argv[j])
 		{
-			if (subject->nbr == lst->nbr)
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 				return (1);
-			subject = subject->next;
+			j++;
 		}
-		lst = lst->next;
+		i++;
+	}
+	return (0);
+}
+
+int	anti_result(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = i + 1;
+	if (*argv)
+	{
+		while (argv[i] < argv[j])
+		{
+			if (ft_atoi(argv[i]) > ft_atoi(argv[j]))
+				return (0);
+			i++;
+			j++;
+		}
+		return (1);
 	}
 	return (0);
 }

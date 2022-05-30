@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:10:32 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/25 18:51:46 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/05/30 17:43:52 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ typedef struct s_lst{
 }	t_lst;
 
 int		ft_atoi(const char *str);
-void	start(t_lst *lst, int argc, char **argv);
-int		anti_occurrences(t_lst *lst);
+void	start(t_lst **lst, int argc, char **argv);
+int		anti_occurrences(char **argv);
+int		anti_result(char **argv);
+void	test(t_lst **lst);
 
 /*------------A------------*/
 
@@ -64,6 +66,7 @@ int		ft_lstsize(t_lst *lst);
 /*----------ERROR----------*/
 
 void	its_under_the_sauce(void);
-void	tacos_taille_XL_nuggets_tenders_merguez_sauce_biggy(void);
+void	tacos_taille_xl_nuggets_tenders_merguez_sauce_biggy_gratine(void);
+void	shrek_is_love_shrek_is_life(void);
 
 #endif

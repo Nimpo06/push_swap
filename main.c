@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:14:44 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/30 17:47:42 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/02 20:28:32 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@ void	test(t_lst **lst)
 	t_lst	*son;
 
 	son = (*lst);
-	while (son->next != NULL)
+	while (son != NULL)
 	{
 		printf("%d\n", son->nbr);
 		son = son->next;
 	}
 }
 
-void	start(t_lst **lst, int argc, char **argv)
+void	start(t_lst **start_a, int argc, char **argv)
 {
 	int		i;
 	t_lst	*son;
 
 	i = 1;
-	son = (*lst);
+	son = (*start_a);
 	if (argc <= 2)
 		its_under_the_sauce();
 	if (anti_occurrences(argv) == 1)
@@ -39,32 +39,27 @@ void	start(t_lst **lst, int argc, char **argv)
 		shrek_is_love_shrek_is_life();
 	while (i < argc)
 	{
-		son = malloc(sizeof(t_lst));
-		son->nbr = ft_atoi(argv[i]);
-		printf("%d\n", son->nbr);
-		son = son->next;
+		son = ft_lstnew(ft_atoi(argv[i]));
+		ft_lstadd_back(start_a, son);
+		//printf("%d\n", son->nbr);
 		i++;
 	}
-	printf("i : %d\n", i - 1);
 	if ((i - 1) == 3)
-		sa(&son);
-	test(lst);
-	//if ((i - 1) == 5)
-	lst = NULL;
+		ra(start_a);
+	test(start_a);
 }
 
 int	main(int argc, char **argv)
 {
 	t_lst	*start_a;
-	t_lst	*start_b;
-	t_lst	**lst;
+	//t_lst	*start_b;
 
-	start_a = malloc(sizeof(t_lst *));
-	start_b = malloc(sizeof(t_lst *));
-	lst = &start_a;
-	if (!lst)
-		return (0);
-	start(lst, argc, argv);
+	// start_a = malloc(sizeof(t_lst));
+	// start_b = malloc(sizeof(t_lst)); // pas la peine de men occuper mtnent
+	// if (!start_a || !start_b)
+	// 	return (0);
+	start_a = NULL;
+	start(&start_a, argc, argv);
 	return (0);
 }
 

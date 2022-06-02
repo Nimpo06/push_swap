@@ -6,7 +6,7 @@
 #    By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/23 15:10:20 by mayoub            #+#    #+#              #
-#    Updated: 2022/05/30 17:53:43 by mayoub           ###   ########.fr        #
+#    Updated: 2022/06/02 18:12:15 by mayoub           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ LIBFT		=	$(addprefix $(LIBFT_DIR), libft.a)
 
 CC			=	gcc
 
-CFLAGS		=	-Werror -Wall -Wextra -g
+CFLAGS		=	-Werror -Wall -Wextra -g -fsanitize=address
 
 LIBRARIES	=	-lft -L$(LIBFT_DIR)
 

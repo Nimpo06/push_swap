@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:14:53 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/23 17:16:58 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/02 19:31:44 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	rra(t_lst **start_a)
 			first->next->next = *start_a;
 			first->next = NULL;
 		}
+		first = first->next;
 	}
 	first->next = *start_a;
 }

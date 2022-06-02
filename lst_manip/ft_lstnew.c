@@ -6,20 +6,20 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:16:50 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/23 17:17:10 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/02 18:37:52 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_lst	*ft_lstnew(int content)
+t_lst	*ft_lstnew(int nbr)
 {
 	t_lst	*new;
 
 	new = (t_lst *)malloc(sizeof(*new));
 	if (!new)
 		return (NULL);
-	new->content = content;
+	new->nbr = nbr;
 	new->next = NULL;
 	return (new);
 }

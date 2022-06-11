@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 13:26:19 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/27 11:18:18 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/11 15:36:55 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstdelone(t_lst *lst, int del(int))
 {
 	if (lst)
 	{
-		del(lst->content);
+		del(lst->nbr);
 		free(lst);
 		lst = NULL;
 	}

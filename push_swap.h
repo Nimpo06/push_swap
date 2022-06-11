@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:10:32 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/02 18:38:52 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/11 20:39:59 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <unistd.h>
 # include <errno.h>
 
+/*------LISTE CHAINÉE------*/
+
 typedef struct s_lst{
 	int				nbr;
 	int				index;
@@ -25,11 +27,17 @@ typedef struct s_lst{
 	struct s_lst	*next;
 }	t_lst;
 
-int		ft_atoi(const char *str);
-void	start(t_lst **lst, int argc, char **argv);
-int		anti_occurrences(char **argv);
-int		anti_result(char **argv);
-void	test(t_lst **lst);
+/*----------ALGO----------*/
+
+int		the_sort_guardian(t_lst **start_a);
+void	sorting(t_lst *start_a, t_lst *start_b);
+void	short_sorting(t_lst *start_a, t_lst *start_b);
+void	big_sorting(t_lst *start_a, t_lst *start_b);
+
+/*-----------MAIN----------*/
+
+void	start(t_lst **start_a, t_lst **start_b, int argc, char **argv);
+void	test(t_lst **lst_a, t_lst **lst_b);
 
 /*------------A------------*/
 
@@ -40,7 +48,7 @@ void	sa(t_lst **start_a);
 
 /*------------B------------*/
 
-void	pb(t_lst **start_b, t_lst **start_a);
+void	pb(t_lst **start_a, t_lst **start_b);
 void	rrb(t_lst **start_b);
 void	rb(t_lst **start_b);
 void	sb(t_lst **start_b);
@@ -48,10 +56,13 @@ void	sb(t_lst **start_b);
 /*-----------A B-----------*/
 
 void	rrr(t_lst **start_a, t_lst **start_b);
+void	rrr2(t_lst **start_b);
 void	rr(t_lst **start_a, t_lst **start_b);
+void	rr2(t_lst **start_b);
 void	ss(t_lst **start_a, t_lst **start_b);
+void	ss2(t_lst **start_b);
 
-/*--------lst_manip--------*/
+/*--------LST MANIP--------*/
 
 void	ft_lstadd_back(t_lst **lst, t_lst *new);
 void	ft_lstadd_front(t_lst **alst, t_lst *new);
@@ -63,10 +74,26 @@ t_lst	*ft_lstmap(t_lst *lst, void *(*f)(void *), int del(int));
 t_lst	*ft_lstnew(int content);
 int		ft_lstsize(t_lst *lst);
 
+/*----------UTILS----------*/
+
+int		ft_atoi(const char *str);
+char	**ft_split(char *s, char c);
+int		ft_isdigit(int c);
+
+/*---------PARSING---------*/
+
+int		sweeper(int argc, char **argv);
+int		sweeper_quotes(char **argv, t_lst **start_a);
+int		the_signs_guardian(int argc, char **argv);
+int		anti_occurrences(char **argv);
+int		anti_result(char **argv, int start);
+
 /*----------ERROR----------*/
 
 void	its_under_the_sauce(void);
 void	tacos_taille_xl_nuggets_tenders_merguez_sauce_biggy_gratine(void);
 void	shrek_is_love_shrek_is_life(void);
+void	tiplouf_je_le_rotis(void);
+void	free_from_desire(char **split);
 
 #endif

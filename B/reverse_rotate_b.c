@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:14:53 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/23 17:16:58 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/04 17:30:38 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 void	rrb(t_lst **start_b)
 {
 	t_lst	*first;
-	//t_lst	*second;
-	first = *start_b;
-	while (first->next != NULL)
+	t_lst	*swap;
+
+	swap = (*start_b);
+	while (swap->next != NULL)
 	{
-		if (first->next->next->next == NULL)
-		{
-			first->next->next = *start_b;
-			first->next = NULL;
-		}
+		if (swap->next->next == NULL)
+			first = swap;
+		swap = swap->next;
 	}
-	first->next = *start_b;
+	first->next = NULL;
+	swap->next = (*start_b);
+	(*start_b) = swap;
+	printf("rrb\n");
 }

@@ -6,60 +6,88 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:14:44 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/02 20:28:32 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/11 20:43:22 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	test(t_lst **lst)
+void	test(t_lst **lst_a, t_lst **lst_b)
 {
-	t_lst	*son;
+	t_lst	*son_a;
+	t_lst	*son_b;
+	int		i;
+	int		j;
 
-	son = (*lst);
-	while (son != NULL)
+	i = 1;
+	j = 1;
+	son_a = (*lst_a);
+	son_b = (*lst_b);
+	// son_b = son_b->next;
+	// printf("%d\n", son_b->next->nbr);
+	printf("A			B\n------			------\n");
+	// if (son_b)
+	// printf("%d ---> maillon n'%d	%d ---> maillon n'%d\n", son_a->nbr, i, son_b->nbr, j);
+	// else
+	printf("%d ---> maillon n'%d	NULL\n", son_a->nbr, i);
+	//printf("%d ---> maillon n'%d	%d ---> maillon n'%d\n", son_a->nbr, i, son_b->nbr, j);
+	while (son_a->next != NULL || son_b != NULL)
 	{
-		printf("%d\n", son->nbr);
-		son = son->next;
+		if (son_b != NULL)
+		{
+			son_b = son_b->next;
+			j++;
+			son_a = son_a->next;
+			i++;
+			printf("%d ---> maillon n'%d	%d ---> maillon n'%d\n", son_a->nbr, i, son_b->nbr, j);
+		}
+		else
+		{
+			son_a = son_a->next;
+			i++;
+			printf("%d ---> maillon n'%d	NULL\n", son_a->nbr, i);
+		}
 	}
 }
 
-void	start(t_lst **start_a, int argc, char **argv)
+void	start(t_lst **start_a, t_lst **start_b, int argc, char **argv)
 {
 	int		i;
 	t_lst	*son;
 
+	(void) **start_b;
 	i = 1;
 	son = (*start_a);
-	if (argc <= 2)
+	if (argc <= 1)
 		its_under_the_sauce();
-	if (anti_occurrences(argv) == 1)
-		tacos_taille_xl_nuggets_tenders_merguez_sauce_biggy_gratine();
-	if (anti_result(argv) == 1)
-		shrek_is_love_shrek_is_life();
-	while (i < argc)
+	if (argc > 2)
 	{
-		son = ft_lstnew(ft_atoi(argv[i]));
-		ft_lstadd_back(start_a, son);
-		//printf("%d\n", son->nbr);
-		i++;
+		sweeper(argc, argv);
+		while (i < argc)
+		{
+			son = ft_lstnew(ft_atoi(argv[i]));
+			ft_lstadd_back(start_a, son);
+			if (ft_isdigit(*argv[i]) == 0)
+				tiplouf_je_le_rotis();
+			i++;
+		}
 	}
-	if ((i - 1) == 3)
-		ra(start_a);
-	test(start_a);
+	else
+		sweeper_quotes(argv, start_a);
 }
 
 int	main(int argc, char **argv)
 {
 	t_lst	*start_a;
-	//t_lst	*start_b;
+	t_lst	*start_b;
 
-	// start_a = malloc(sizeof(t_lst));
-	// start_b = malloc(sizeof(t_lst)); // pas la peine de men occuper mtnent
-	// if (!start_a || !start_b)
-	// 	return (0);
 	start_a = NULL;
-	start(&start_a, argc, argv);
+	start_b = NULL;
+	start(&start_a, &start_b, argc, argv);
+	sorting(start_a, start_b);
+	test(&start_a, &start_b);
+	//printf("%d\n", start_a->next->nbr);
+	//system("leaks push_swap");
 	return (0);
 }
 

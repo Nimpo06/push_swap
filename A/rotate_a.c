@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:13:39 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/23 17:16:58 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/05 14:49:22 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,30 @@
 void	ra(t_lst **start_a)
 {
 	t_lst	*last;
+	t_lst	*swap;
+	int		swap_2;
 
-	last = *start_a;
-	while (last->next != NULL)
-		last = last->next;
-	last->next = *start_a;
-	last->next->next = NULL;
-	//(*start_a)->next = NULL;
+	if ((*start_a)->next->next == NULL)
+	{
+		last = (*start_a)->next;
+		swap_2 = (*start_a)->nbr;
+		(*start_a)->nbr = last->nbr;
+		last->nbr = swap_2;
+		printf("ra\n");
+	}
+	else
+	{
+		last = (*start_a);
+		(*start_a) = (*start_a)->next;
+		swap = (*start_a)->next;
+		while (swap->next != NULL)
+			swap = swap->next;
+		swap->next = last;
+		last->next = NULL;
+		printf("ra\n");
+	}
+	// printf("%d -> last\n", last->nbr);
+	// printf("%d -> swap\n", swap);
+	// last->next->next = NULL;
+	// (*start_a)->next = NULL;
 }

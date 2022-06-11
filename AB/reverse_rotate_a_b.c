@@ -6,14 +6,44 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:18:50 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/23 17:16:58 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/05 17:27:33 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+void	rrr2(t_lst **start_b)
+{
+	t_lst	*first;
+	t_lst	*swap;
+
+	swap = (*start_b);
+	while (swap->next != NULL)
+	{
+		if (swap->next->next == NULL)
+			first = swap;
+		swap = swap->next;
+	}
+	first->next = NULL;
+	swap->next = (*start_b);
+	(*start_b) = swap;
+}
+
 void	rrr(t_lst **start_a, t_lst **start_b)
 {
-	rra(start_a);
-	rrb(start_b);
+	t_lst	*first;
+	t_lst	*swap;
+
+	swap = (*start_a);
+	while (swap->next != NULL)
+	{
+		if (swap->next->next == NULL)
+			first = swap;
+		swap = swap->next;
+	}
+	first->next = NULL;
+	swap->next = (*start_a);
+	(*start_a) = swap;
+	rrr2(start_b);
+	printf("rrr\n");
 }

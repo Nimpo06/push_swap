@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:13:10 by mayoub            #+#    #+#             */
-/*   Updated: 2022/05/23 17:17:10 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/05 13:55:24 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	pa(t_lst **start_a, t_lst **start_b)
 	top_b = *start_b;
 	*start_b = (*start_b)->next;
 	ft_lstadd_front(start_a, top_b);
+	printf("pa\n");
 }
 
 	// t_list *new_lst;

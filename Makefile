@@ -6,7 +6,7 @@
 #    By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/23 15:10:20 by mayoub            #+#    #+#              #
-#    Updated: 2022/06/02 18:12:15 by mayoub           ###   ########.fr        #
+#    Updated: 2022/06/11 19:46:37 by mayoub           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,9 @@ FILE		=	main						\
 				lst_manip/ft_lstmap			\
 				lst_manip/ft_lstnew			\
 				lst_manip/ft_lstsize		\
-				parsing/anti_occurrences	\
+				parsing/sweep_sweep_sweep	\
 				error/error					\
+				sorting/sorting				\
 
 SRC_DIR		=	./
 
@@ -50,7 +51,7 @@ LIBFT		=	$(addprefix $(LIBFT_DIR), libft.a)
 
 CC			=	gcc
 
-CFLAGS		=	-Werror -Wall -Wextra -g -fsanitize=address
+CFLAGS		=	-Werror -Wall -Wextra #-g -fsanitize=address
 
 LIBRARIES	=	-lft -L$(LIBFT_DIR)
 
@@ -72,8 +73,7 @@ $(LIBFT)	:
 				@$(MAKE) -C $(LIBFT_DIR)
 				@echo "\033[1;32m \n🍳 Libft is cooked 🍳 !!!\n \033[0;37m\n##############################################\n"
 				
-				@echo "\033[1;35m🥕 Let's cook the push_swap files 🥬 . . .\n"
-				
+				@echo "\033[1;35m🥕 Let's cook the push_swap files 🥬 . . .\n"			
 
 all			:	${NAME}
 
@@ -82,7 +82,6 @@ clean		:
 				${RM} ${OBJ}
 				@$(MAKE) clean -C $(LIBFT_DIR)
 				@echo "\n 🗑  Your dish has been cleaned 🗑\n"
-				
 
 fclean		:	clean
 				${RM} ${NAME}

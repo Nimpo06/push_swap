@@ -6,7 +6,7 @@
 #    By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/23 15:10:20 by mayoub            #+#    #+#              #
-#    Updated: 2022/06/11 19:46:37 by mayoub           ###   ########.fr        #
+#    Updated: 2022/06/12 16:03:41 by mayoub           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ FILE		=	main						\
 				lst_manip/ft_lstsize		\
 				parsing/sweep_sweep_sweep	\
 				error/error					\
-				sorting/sorting				\
+				sorting/short_sorting		\
 
 SRC_DIR		=	./
 

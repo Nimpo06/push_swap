@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:13:39 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/05 14:49:22 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/12 11:20:49 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,4 @@ void	ra(t_lst **start_a)
 		last->next = NULL;
 		printf("ra\n");
 	}
-	// printf("%d -> last\n", last->nbr);
-	// printf("%d -> swap\n", swap);
-	// last->next->next = NULL;
-	// (*start_a)->next = NULL;
 }

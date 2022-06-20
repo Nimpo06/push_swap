@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:14:44 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/12 16:20:03 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/19 14:31:59 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ int	main(int argc, char **argv)
 	start(&start_a, &start_b, argc, argv);
 	sorting(&start_a, &start_b);
 	//pb(&start_a, &start_b);
-	pb(&start_a, &start_b);
-	pa(&start_a, &start_b);
+	// pb(&start_a, &start_b);
+	// pa(&start_a, &start_b);
 	test(&start_a, &start_b);
 	//system("leaks push_swap");
 	return (0);

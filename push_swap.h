@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:10:32 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/12 15:39:03 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/22 15:33:56 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <errno.h>
+# include <limits.h>
 
 /*------LISTE CHAINÉE------*/
 
@@ -33,7 +34,7 @@ int		the_sort_guardian(t_lst *start_a);
 void	sorting(t_lst **start_a, t_lst **start_b);
 void	short_sorting_3(t_lst **start_a);
 void	short_sorting_5(t_lst **start_a, t_lst **start_b);
-void	big_sorting(t_lst *start_a, t_lst *start_b);
+void	big_sorting(t_lst **start_a, t_lst **start_b, t_lst *all);
 
 /*-----------MAIN----------*/
 
@@ -46,6 +47,10 @@ void	pa(t_lst **start_a, t_lst **start_b);
 void	rra(t_lst **start_a);
 void	ra(t_lst **start_a);
 void	sa(t_lst **start_a);
+
+/*- - - - - - + - - - - - -*/
+
+void	reversed(t_lst **start_a);
 
 /*------------B------------*/
 
@@ -80,6 +85,7 @@ int		ft_lstsize(t_lst *lst);
 int		ft_atoi(const char *str);
 char	**ft_split(char *s, char c);
 int		ft_isdigit(int c);
+void	ft_putstr_fd(char *s, int fd);
 
 /*---------PARSING---------*/
 
@@ -95,6 +101,7 @@ void	its_under_the_sauce(void);
 void	tacos_taille_xl_nuggets_tenders_merguez_sauce_biggy_gratine(void);
 void	shrek_is_love_shrek_is_life(void);
 void	tiplouf_je_le_rotis(void);
+void	maaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarc(void);
 void	free_from_desire(char **split);
 
 #endif

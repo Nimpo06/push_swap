@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:18:50 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/05 17:27:33 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/22 15:40:48 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ void	rrr(t_lst **start_a, t_lst **start_b)
 	swap->next = (*start_a);
 	(*start_a) = swap;
 	rrr2(start_b);
-	printf("rrr\n");
+	ft_putstr_fd("rrr\n", 1);
 }

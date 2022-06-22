@@ -6,7 +6,7 @@
 #    By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/23 15:10:20 by mayoub            #+#    #+#              #
-#    Updated: 2022/06/12 16:03:41 by mayoub           ###   ########.fr        #
+#    Updated: 2022/06/22 12:19:43 by mayoub           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ FILE		=	main						\
 				lst_manip/ft_lstsize		\
 				parsing/sweep_sweep_sweep	\
 				error/error					\
+				error/free					\
 				sorting/short_sorting		\
+				sorting/big_sorting			\
 
 SRC_DIR		=	./
 
@@ -137,4 +139,4 @@ sus			:
 				echo $$i 💀 SUSSY BAKA 💀\\n; \
 				done
 
-.PHONY		:	all clean fclean re sus
+.PHONY		:	all clean fclean re sus debug

@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:13:39 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/05 14:50:56 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/22 15:40:07 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	rb(t_lst **start_b)
 		swap_2 = (*start_b)->nbr;
 		(*start_b)->nbr = last->nbr;
 		last->nbr = swap_2;
-		printf("rb\n");
+		ft_putstr_fd("rb\n", 1);
 	}
 	else
 	{
@@ -35,6 +35,6 @@ void	rb(t_lst **start_b)
 			swap = swap->next;
 		swap->next = last;
 		last->next = NULL;
-		printf("rb\n");
+		ft_putstr_fd("rb\n", 1);
 	}
 }

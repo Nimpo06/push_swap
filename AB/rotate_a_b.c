@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:18:31 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/05 17:13:15 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/22 15:40:52 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ void	rr(t_lst **start_a, t_lst **start_b)
 		last->next = NULL;
 	}
 	rr2(start_b);
-	printf("rr\n");
+	ft_putstr_fd("rr\n", 1);
 }

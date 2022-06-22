@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:12:42 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/06 16:11:52 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/22 15:40:42 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ void	sa(t_lst **start_a)
 	swap = (*start_a)->nbr;
 	(*start_a)->nbr = temp->nbr;
 	temp->nbr = swap;
-	//temp->next = temp;
-	//temp->next = (*start_a)->next->next;
-	printf("sa\n");
+	ft_putstr_fd("sa\n", 1);
+}
+
+void	reversed(t_lst **start_a)
+{
+	sa(start_a);
+	rra(start_a);
 }

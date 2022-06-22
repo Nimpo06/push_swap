@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:17:19 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/05 17:34:47 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/22 15:41:12 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ void	ss(t_lst **start_a, t_lst **start_b)
 	(*start_a)->nbr = temp->nbr;
 	temp->nbr = swap;
 	ss2(start_b);
-	printf("ss\n");
+	ft_putstr_fd("ss\n", 1);
 }

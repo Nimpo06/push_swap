@@ -6,13 +6,13 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 17:11:52 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/22 15:46:52 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/24 19:01:48 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "../push_swap.h"
 
-int	the_sort_guardian(t_lst *start_a)
+int	the_sort_guardian(t_lst *start_a, t_lst *start_b)
 {
 	t_lst	*son_1;
 	t_lst	*son_2;
@@ -26,6 +26,8 @@ int	the_sort_guardian(t_lst *start_a)
 		son_1 = son_1->next;
 		son_2 = son_2->next;
 	}
+	if (start_b != NULL)
+		return (1);
 	return (0);
 }
 
@@ -73,12 +75,12 @@ void	short_sorting_5(t_lst **start_a, t_lst **start_b)
 		stop++;
 		son = (*start_a);
 	}
-	short_sorting_3(start_a);
+	short_sorting_3(start_a, start_b);
 }
 
-void	short_sorting_3(t_lst **start_a)
+void	short_sorting_3(t_lst **start_a, t_lst **start_b)
 {
-	while (the_sort_guardian(*start_a) == 1)
+	while (the_sort_guardian(*start_a, *start_b) == 1)
 	{
 		if ((*start_a)->nbr > (*start_a)->next->nbr
 			&& (*start_a)->next->nbr > (*start_a)->next->next->nbr)
@@ -107,8 +109,6 @@ void	short_sorting_3(t_lst **start_a)
 
 void	sorting(t_lst **start_a, t_lst **start_b)
 {
-	t_lst	all;
-
 	if (ft_lstsize(*start_a) == 2)
 		sa(start_a);
 	else if (ft_lstsize(*start_a) == 3)
@@ -118,7 +118,7 @@ void	sorting(t_lst **start_a, t_lst **start_b)
 			&& ((*start_a)->nbr > (*start_a)->next->next->nbr))
 			rra(start_a);
 		else
-			short_sorting_3(start_a);
+			short_sorting_3(start_a, start_b);
 	}
 	else if (ft_lstsize(*start_a) == 5)
 	{
@@ -127,5 +127,5 @@ void	sorting(t_lst **start_a, t_lst **start_b)
 		pa(start_a, start_b);
 	}
 	else
-		big_sorting(start_a, start_b, &all);
+		big_sorting(start_a, start_b);
 }

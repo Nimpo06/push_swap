@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:10:32 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/22 15:33:56 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/24 18:21:57 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ typedef struct s_lst{
 
 /*----------ALGO----------*/
 
-int		the_sort_guardian(t_lst *start_a);
+int		the_sort_guardian(t_lst *start_a, t_lst *start_b);
 void	sorting(t_lst **start_a, t_lst **start_b);
-void	short_sorting_3(t_lst **start_a);
+void	short_sorting_3(t_lst **start_a, t_lst **start_b);
 void	short_sorting_5(t_lst **start_a, t_lst **start_b);
-void	big_sorting(t_lst **start_a, t_lst **start_b, t_lst *all);
+void	big_sorting(t_lst **start_a, t_lst **start_b);
+void	index_sort(t_lst **start_a);
+int		big_number(t_lst **start_a);
 
 /*-----------MAIN----------*/
 
@@ -51,6 +53,7 @@ void	sa(t_lst **start_a);
 /*- - - - - - + - - - - - -*/
 
 void	reversed(t_lst **start_a);
+int		is_trier(t_lst **start_a);
 
 /*------------B------------*/
 

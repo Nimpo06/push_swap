@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:16:50 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/02 18:37:52 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/24 18:18:11 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_lst	*ft_lstnew(int nbr)
 	if (!new)
 		return (NULL);
 	new->nbr = nbr;
+	new->index = -1;
 	new->next = NULL;
 	return (new);
 }

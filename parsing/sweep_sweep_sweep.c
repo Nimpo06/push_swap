@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:50:25 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/23 17:36:02 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/25 16:10:22 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ int	sweeper(int argc, char **argv)
 
 	i = 1;
 	if (argc <= 1)
-		its_under_the_sauce();
+		exit(0);
 	if (anti_occurrences(argv) == 1)
 		tacos_taille_xl_nuggets_tenders_merguez_sauce_biggy_gratine();
 	if (anti_result(argv, 1) == 1)
-		shrek_is_love_shrek_is_life();
+		exit(0);
 	return (0);
 }
 

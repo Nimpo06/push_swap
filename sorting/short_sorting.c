@@ -6,28 +6,26 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 17:11:52 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/24 19:01:48 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/25 16:51:44 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "../push_swap.h"
 
-int	the_sort_guardian(t_lst *start_a, t_lst *start_b)
+int	is_trier(t_lst **start_a)
 {
-	t_lst	*son_1;
-	t_lst	*son_2;
+	int		i;
+	t_lst	*son;
 
-	son_1 = (start_a);
-	son_2 = (start_a)->next;
-	while (son_1)
+	son = (*start_a);
+	i = ft_lstsize(son);
+	while (i > 0 && son->next != NULL)
 	{
-		if (son_1->nbr > son_2->nbr)
+		if (son->nbr > son->next->nbr)
 			return (1);
-		son_1 = son_1->next;
-		son_2 = son_2->next;
+		son = son->next;
+		i--;
 	}
-	if (start_b != NULL)
-		return (1);
 	return (0);
 }
 
@@ -73,14 +71,13 @@ void	short_sorting_5(t_lst **start_a, t_lst **start_b)
 			son = son->next;
 		}
 		stop++;
-		son = (*start_a);
 	}
-	short_sorting_3(start_a, start_b);
+	short_sorting_3(start_a);
 }
 
-void	short_sorting_3(t_lst **start_a, t_lst **start_b)
+void	short_sorting_3(t_lst **start_a)
 {
-	while (the_sort_guardian(*start_a, *start_b) == 1)
+	while (is_trier(start_a) != 0)
 	{
 		if ((*start_a)->nbr > (*start_a)->next->nbr
 			&& (*start_a)->next->nbr > (*start_a)->next->next->nbr)
@@ -118,7 +115,7 @@ void	sorting(t_lst **start_a, t_lst **start_b)
 			&& ((*start_a)->nbr > (*start_a)->next->next->nbr))
 			rra(start_a);
 		else
-			short_sorting_3(start_a, start_b);
+			short_sorting_3(start_a);
 	}
 	else if (ft_lstsize(*start_a) == 5)
 	{

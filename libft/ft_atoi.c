@@ -6,17 +6,19 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 06:38:49 by mayoub            #+#    #+#             */
-/*   Updated: 2021/11/02 14:46:57 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/23 17:31:08 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <limits.h>
+#include "../push_swap.h"
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	j;
-	int	n;
+	int		i;
+	long	j;
+	long	n;
 
 	i = 0;
 	j = 1;
@@ -36,6 +38,8 @@ int	ft_atoi(const char *str)
 		n = n * 10 + (str[i] - '0');
 		i++;
 	}
+	if ((n * j) > INT_MAX || (n * j) < INT_MIN)
+		maaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarc();
 	return (n * j);
 }
 /*

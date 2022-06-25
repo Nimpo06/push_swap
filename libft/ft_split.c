@@ -6,13 +6,13 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:34:34 by mayoub            #+#    #+#             */
-/*   Updated: 2021/11/03 18:35:03 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/23 17:39:11 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	counter(const char *str, char c)
+int	counter(char *str, char c)
 {
 	int	i;
 	int	trigger;
@@ -35,7 +35,7 @@ int	counter(const char *str, char c)
 	return (i);
 }
 
-char	*duplicator(const char *str, int start, int end)
+char	*duplicator(char *str, int start, int end)
 {
 	int		i;
 	char	*word;
@@ -54,7 +54,7 @@ char	*duplicator(const char *str, int start, int end)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -73,12 +73,12 @@ char	**ft_split(char const *s, char c)
 			trigger = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && trigger >= 0)
 		{
-			result[j] = duplicator(s, trigger, i);
-			j++;
+			result[j++] = duplicator(s, trigger, i);
 			trigger = -1;
 		}
 		i++;
 	}
 	result[j] = 0;
+	j = 0;
 	return (result);
 }

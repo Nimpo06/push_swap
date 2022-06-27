@@ -6,11 +6,28 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:59:23 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/25 16:49:46 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/27 17:16:24 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	is_trier(t_lst **start_a)
+{
+	int		i;
+	t_lst	*son;
+
+	son = (*start_a);
+	i = ft_lstsize(son);
+	while (i > 0 && son->next != NULL)
+	{
+		if (son->nbr > son->next->nbr)
+			return (1);
+		son = son->next;
+		i--;
+	}
+	return (0);
+}
 
 void	binary_ra(t_lst	**start_a)
 {

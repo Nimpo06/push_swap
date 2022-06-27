@@ -6,28 +6,11 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 17:11:52 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/25 16:51:44 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/27 17:22:28 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "../push_swap.h"
-
-int	is_trier(t_lst **start_a)
-{
-	int		i;
-	t_lst	*son;
-
-	son = (*start_a);
-	i = ft_lstsize(son);
-	while (i > 0 && son->next != NULL)
-	{
-		if (son->nbr > son->next->nbr)
-			return (1);
-		son = son->next;
-		i--;
-	}
-	return (0);
-}
 
 int	trigger_get_min(t_lst **start_a)
 {
@@ -71,6 +54,36 @@ void	short_sorting_5(t_lst **start_a, t_lst **start_b)
 			son = son->next;
 		}
 		stop++;
+		son = (*start_a);
+	}
+	short_sorting_3(start_a);
+}
+
+void	short_sorting_4(t_lst **start_a, t_lst **start_b)
+{
+	int		trigger;
+	int		stop;
+	int		min_trigger;
+	t_lst	*son;
+
+	son = (*start_a);
+	stop = 0;
+	while (stop != 1)
+	{
+		min_trigger = trigger_get_min(start_a);
+		while (son != NULL)
+		{
+			trigger = son->nbr;
+			if (min_trigger == trigger)
+			{
+				while ((*start_a)->nbr != trigger)
+					rra(start_a);
+				pb(start_a, start_b);
+			}
+			son = son->next;
+		}
+		stop++;
+		son = (*start_a);
 	}
 	short_sorting_3(start_a);
 }
@@ -114,8 +127,12 @@ void	sorting(t_lst **start_a, t_lst **start_b)
 				&& (*start_a)->next->nbr > (*start_a)->next->next->nbr)
 			&& ((*start_a)->nbr > (*start_a)->next->next->nbr))
 			rra(start_a);
-		else
-			short_sorting_3(start_a);
+		short_sorting_3(start_a);
+	}
+	else if (ft_lstsize(*start_a) == 4)
+	{
+		short_sorting_4(start_a, start_b);
+		pa(start_a, start_b);
 	}
 	else if (ft_lstsize(*start_a) == 5)
 	{
@@ -125,4 +142,5 @@ void	sorting(t_lst **start_a, t_lst **start_b)
 	}
 	else
 		big_sorting(start_a, start_b);
+	exit(0);
 }

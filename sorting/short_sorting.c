@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 17:11:52 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/27 17:22:28 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/28 18:05:09 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,60 +32,48 @@ int	trigger_get_min(t_lst **start_a)
 
 void	short_sorting_5(t_lst **start_a, t_lst **start_b)
 {
-	int		trigger;
 	int		stop;
 	int		min_trigger;
-	t_lst	*son;
+	int		trigger;
 
-	son = (*start_a);
 	stop = 0;
+	trigger = (*start_a)->nbr;
 	while (stop != 2)
 	{
 		min_trigger = trigger_get_min(start_a);
-		while (son != NULL)
+		trigger = (*start_a)->nbr;
+		while (min_trigger != trigger)
 		{
-			trigger = son->nbr;
-			if (min_trigger == trigger)
-			{
-				while ((*start_a)->nbr != trigger)
-					rra(start_a);
-				pb(start_a, start_b);
-			}
-			son = son->next;
+			if (min_trigger >= (ft_lstsize(*start_a)) / 2)
+				rra(start_a);
+			else
+				ra(start_a);
+			trigger = (*start_a)->nbr;
 		}
+		if (is_trier(start_a) == 1)
+			pb(start_a, start_b);
 		stop++;
-		son = (*start_a);
 	}
 	short_sorting_3(start_a);
+	while (*(start_b) != NULL)
+		pa(start_a, start_b);
 }
 
 void	short_sorting_4(t_lst **start_a, t_lst **start_b)
 {
 	int		trigger;
-	int		stop;
 	int		min_trigger;
-	t_lst	*son;
 
-	son = (*start_a);
-	stop = 0;
-	while (stop != 1)
+	trigger = INT_MAX;
+	min_trigger = trigger_get_min(start_a);
+	while (min_trigger != trigger)
 	{
-		min_trigger = trigger_get_min(start_a);
-		while (son != NULL)
-		{
-			trigger = son->nbr;
-			if (min_trigger == trigger)
-			{
-				while ((*start_a)->nbr != trigger)
-					rra(start_a);
-				pb(start_a, start_b);
-			}
-			son = son->next;
-		}
-		stop++;
-		son = (*start_a);
+		rra(start_a);
+		trigger = (*start_a)->nbr;
 	}
+	pb(start_a, start_b);
 	short_sorting_3(start_a);
+	pa(start_a, start_b);
 }
 
 void	short_sorting_3(t_lst **start_a)
@@ -130,16 +118,9 @@ void	sorting(t_lst **start_a, t_lst **start_b)
 		short_sorting_3(start_a);
 	}
 	else if (ft_lstsize(*start_a) == 4)
-	{
 		short_sorting_4(start_a, start_b);
-		pa(start_a, start_b);
-	}
 	else if (ft_lstsize(*start_a) == 5)
-	{
 		short_sorting_5(start_a, start_b);
-		pa(start_a, start_b);
-		pa(start_a, start_b);
-	}
 	else
 		big_sorting(start_a, start_b);
 	exit(0);

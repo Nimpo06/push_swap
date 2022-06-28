@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 06:38:49 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/23 17:31:08 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/28 14:57:02 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,6 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	if ((n * j) > INT_MAX || (n * j) < INT_MIN)
-		maaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarc();
+		error();
 	return (n * j);
 }
-/*
-int	main(void)
-{
-	printf("%d\n", ft_atoi("++1"));
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:14:44 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/27 17:22:26 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/28 18:07:14 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	start(t_lst **start_a, t_lst **start_b, int argc, char **argv)
 	i = 1;
 	son = (*start_a);
 	if (argc <= 1)
-		its_under_the_sauce();
+		exit(0);
 	if (argc > 2)
 	{
 		sweeper(argc, argv);
@@ -47,7 +47,7 @@ void	start(t_lst **start_a, t_lst **start_b, int argc, char **argv)
 			son = ft_lstnew(ft_atoi(argv[i]));
 			ft_lstadd_back(start_a, son);
 			if (ft_isdigit(*argv[i]) == 0)
-				tiplouf_je_le_rotis();
+				error();
 			i++;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:10:32 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/27 17:20:36 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/28 18:12:51 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,14 @@ typedef struct s_lst{
 /*----------ALGO----------*/
 
 int		the_sort_guardian(t_lst **start_a);
+int		big_number(t_lst **start_a);
+void	sorted_index(char **argv);
 void	sorting(t_lst **start_a, t_lst **start_b);
 void	short_sorting_3(t_lst **start_a);
 void	short_sorting_4(t_lst **start_a, t_lst **start_b);
 void	short_sorting_5(t_lst **start_a, t_lst **start_b);
 void	big_sorting(t_lst **start_a, t_lst **start_b);
 void	index_sort(t_lst **start_a);
-int		big_number(t_lst **start_a);
 
 /*-----------MAIN----------*/
 
@@ -96,16 +97,12 @@ void	ft_putstr_fd(char *s, int fd);
 int		sweeper(int argc, char **argv);
 int		sweeper_quotes(char **argv, t_lst **start_a);
 int		the_signs_guardian(int argc, char **argv);
-int		anti_occurrences(char **argv);
+int		anti_occurrences(char **argv, int start);
 int		anti_result(char **argv, int start);
 
 /*----------ERROR----------*/
 
-void	its_under_the_sauce(void);
-void	tacos_taille_xl_nuggets_tenders_merguez_sauce_biggy_gratine(void);
-void	shrek_is_love_shrek_is_life(void);
-void	tiplouf_je_le_rotis(void);
-void	maaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarc(void);
+void	error(void);
 void	free_from_desire(char **split);
 
 #endif

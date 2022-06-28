@@ -6,18 +6,18 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:50:25 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/27 15:42:53 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/28 18:08:01 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	anti_occurrences(char **argv)
+int	anti_occurrences(char **argv, int start)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = start;
 	while (argv[i])
 	{
 		j = i + 1;
@@ -60,8 +60,8 @@ int	sweeper(int argc, char **argv)
 	i = 1;
 	if (argc <= 1)
 		exit(0);
-	if (anti_occurrences(argv) == 1)
-		tacos_taille_xl_nuggets_tenders_merguez_sauce_biggy_gratine();
+	if (anti_occurrences(argv, 1) == 1)
+		error();
 	if (anti_result(argv, 1) == 1)
 		exit(0);
 	return (0);
@@ -77,17 +77,17 @@ int	sweeper_quotes(char **argv, t_lst **start_a)
 	split = ft_split(argv[1], ' ');
 	son = (*start_a);
 	if (split[i] == '\0')
-		tiplouf_je_le_rotis();
+		exit(0);
 	while (split[i] != '\0')
 	{
 		son = ft_lstnew(ft_atoi(split[i]));
 		ft_lstadd_back(start_a, son);
 		if (ft_isdigit(*split[i]) == 0)
-			tiplouf_je_le_rotis();
+			error();
 		i++;
 	}
-	if (anti_occurrences(split) == 1)
-		tacos_taille_xl_nuggets_tenders_merguez_sauce_biggy_gratine();
+	if (anti_occurrences(split, 0) == 1)
+		error();
 	if (anti_result(split, 0) == 1)
 		exit(0);
 	free_from_desire(split);

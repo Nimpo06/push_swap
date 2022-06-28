@@ -6,11 +6,17 @@
 /*   By: mayoub <mayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:59:23 by mayoub            #+#    #+#             */
-/*   Updated: 2022/06/27 17:16:24 by mayoub           ###   ########.fr       */
+/*   Updated: 2022/06/28 17:06:14 by mayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	binary_ra(t_lst	**start_a)
+{
+	if ((*start_a)->next)
+		ra(start_a);
+}
 
 int	is_trier(t_lst **start_a)
 {
@@ -27,12 +33,6 @@ int	is_trier(t_lst **start_a)
 		i--;
 	}
 	return (0);
-}
-
-void	binary_ra(t_lst	**start_a)
-{
-	if ((*start_a)->next)
-		ra(start_a);
 }
 
 void	big_sorting(t_lst **start_a, t_lst **start_b)
